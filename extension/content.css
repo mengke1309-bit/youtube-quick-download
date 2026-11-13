@@ -1,0 +1,66 @@
+/* 悬停下载按钮 */
+ytd-thumbnail,
+yt-thumbnail-view-model {
+  position: relative !important;
+}
+
+.ytdl-hover-btn {
+  position: absolute !important;
+  top: 6px !important;
+  right: 6px !important;
+  z-index: 2200 !important;
+  width: 34px !important;
+  height: 34px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  border-radius: 50% !important;
+  background: rgba(10, 10, 10, 0.82) !important;
+  color: #fff !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45) !important;
+  transition: transform 0.12s ease, background 0.12s ease !important;
+}
+
+.ytdl-hover-btn:hover {
+  background: #f03 !important;
+  transform: scale(1.12) !important;
+}
+
+.ytdl-hover-btn.ytdl-btn-busy {
+  opacity: 0.55 !important;
+  pointer-events: none !important;
+}
+
+/* 底部提示条 */
+.ytdl-toast {
+  position: fixed !important;
+  left: 50% !important;
+  bottom: 42px !important;
+  transform: translateX(-50%) translateY(20px) !important;
+  z-index: 99999 !important;
+  max-width: 70vw !important;
+  padding: 10px 18px !important;
+  border-radius: 8px !important;
+  background: rgba(20, 20, 20, 0.92) !important;
+  color: #fff !important;
+  font: 14px/1.5 "Microsoft YaHei", Roboto, Arial, sans-serif !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition: opacity 0.2s ease, transform 0.2s ease !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.ytdl-toast.ytdl-toast-show {
+  opacity: 1 !important;
+  transform: translateX(-50%) translateY(0) !important;
+}
+
+.ytdl-toast.ytdl-toast-error {
+  background: #c62828 !important;
+}

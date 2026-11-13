@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube 一键下载",
+  "version": "1.0.0",
+  "description": "鼠标悬停 YouTube 视频缩略图时显示下载按钮，点击即可通过本地下载服务以最高画质下载视频。",
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": [
+    "http://127.0.0.1:17890/*",
+    "https://www.youtube.com/*",
+    "https://m.youtube.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.youtube.com/*",
+        "https://m.youtube.com/*"
+      ],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
